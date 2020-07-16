@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.android.example.navigation.fragments.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment">
+
+        <action
+            android:id="@+id/click"
+            app:destination="@id/lillyDescriptionFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/mainFragment"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_exit"/>
+        <action
+            android:id="@+id/click_orchid"
+            app:destination="@id/orchidDescriptionFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/mainFragment"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_exit" />
+        <action
+            android:id="@+id/action_mainActivity_to_roseDescriptionFragment"
+            app:destination="@id/roseDescriptionFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/lillyDescriptionFragment"
+        android:name="com.android.example.navigation.fragments.LillyDescriptionFragment"
+        android:label="LillyDescriptionFragment"
+        tools:layout="@layout/lilly_desc">
+        <action
+            android:id="@+id/click_photos"
+            app:destination="@id/lillyPhotosFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/lillyDescriptionFragment"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/orchidDescriptionFragment"
+        android:name="com.android.example.navigation.fragments.OrchidDescriptionFragment"
+        android:label="OrchidDescriptionFragment"
+        tools:layout="@layout/orchid_desc">
+        <action
+            android:id="@+id/action_orchidDescriptionFragment_to_orchidPhotosFragment"
+            app:destination="@id/orchidPhotosFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/orchidDescriptionFragment"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/roseDescriptionFragment"
+        android:name="com.android.example.navigation.fragments.RoseDescriptionFragment"
+        android:label="RoseDescriptionFragment"
+        tools:layout="@layout/rose_desc">
+        <action
+            android:id="@+id/action_roseDescriptionFragment_to_rosePhotosFragment"
+            app:destination="@id/rosePhotosFragment"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/roseDescriptionFragment"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/lillyPhotosFragment"
+        android:name="com.android.example.navigation.fragments.LillyPhotosFragment"
+        android:label="LillyPhotosFragment" />
+    <fragment
+        android:id="@+id/rosePhotosFragment"
+        android:name="com.android.example.navigation.fragments.RosePhotosFragment"
+        android:label="RosePhotosFragment" />
+    <fragment
+        android:id="@+id/orchidPhotosFragment"
+        android:name="com.android.example.navigation.fragments.OrchidPhotosFragment"
+        android:label="OrchidPhotosFragment" />
+</navigation>
